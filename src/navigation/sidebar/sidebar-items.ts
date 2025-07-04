@@ -44,74 +44,74 @@ export interface NavGroup {
 export const sidebarItems: NavGroup[] = [
   {
     id: 1,
-    label: "Dashboards",
+    label: "仪表板",
     items: [
       {
-        title: "Dashboards",
+        title: "仪表板",
         url: "/dashboard",
         icon: Home,
         subItems: [
-          { title: "Default", url: "/dashboard/default", icon: ChartPie },
-          { title: "CRM", url: "/dashboard", icon: Grid2X2, comingSoon: true },
-          { title: "Analytics", url: "/dashboard/analytics", icon: ChartLine, comingSoon: true },
-          { title: "eCommerce", url: "/dashboard/e-commerce", icon: ShoppingBag, comingSoon: true },
-          { title: "Academy", url: "/dashboard/academy", icon: BookA, comingSoon: true },
-          { title: "Logistics", url: "/dashboard/logistics", icon: Forklift, comingSoon: true },
+          { title: "默认", url: "/dashboard/default", icon: ChartPie },
+          { title: "客户关系管理", url: "/dashboard", icon: Grid2X2, comingSoon: true },
+          { title: "数据分析", url: "/dashboard/analytics", icon: ChartLine, comingSoon: true },
+          { title: "电子商务", url: "/dashboard/e-commerce", icon: ShoppingBag, comingSoon: true },
+          { title: "学院", url: "/dashboard/academy", icon: BookA, comingSoon: true },
+          { title: "物流", url: "/dashboard/logistics", icon: Forklift, comingSoon: true },
         ],
       },
     ],
   },
   {
     id: 2,
-    label: "Pages",
+    label: "页面",
     items: [
       {
-        title: "Authentication",
+        title: "身份认证",
         url: "/auth",
         icon: Fingerprint,
         subItems: [
-          { title: "Login v1", url: "/auth/v1/login", newTab: true },
-          { title: "Register v1", url: "/auth/v1/register", newTab: true },
+          { title: "登录 v1", url: "/auth/v1/login", newTab: true },
+          { title: "注册 v1", url: "/auth/v1/register", newTab: true },
         ],
       },
       {
-        title: "Email",
+        title: "邮件",
         url: "/mail",
         icon: Mail,
         comingSoon: true,
       },
       {
-        title: "Chat",
+        title: "聊天",
         url: "/chat",
         icon: MessageSquare,
         comingSoon: true,
       },
       {
-        title: "Calendar",
+        title: "日历",
         url: "/calendar",
         icon: Calendar,
         comingSoon: true,
       },
       {
-        title: "Kanban",
+        title: "看板",
         url: "/kanban",
         icon: Kanban,
         comingSoon: true,
       },
       {
-        title: "Invoice",
+        title: "发票",
         url: "/invoice",
         icon: ReceiptText,
         comingSoon: true,
       },
       {
-        title: "Users",
+        title: "用户",
         url: "/users",
         icon: Users,
         comingSoon: true,
       },
       {
-        title: "Roles",
+        title: "角色",
         url: "/roles",
         icon: Lock,
         comingSoon: true,
@@ -120,10 +120,10 @@ export const sidebarItems: NavGroup[] = [
   },
   {
     id: 3,
-    label: "Misc",
+    label: "其他",
     items: [
       {
-        title: "Others",
+        title: "其他",
         url: "/others",
         icon: SquareArrowUpRight,
         comingSoon: true,

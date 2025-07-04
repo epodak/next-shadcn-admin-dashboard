@@ -14,14 +14,14 @@ import {
 } from "@/components/ui/command";
 
 const searchItems = [
-  { group: "Dashboards", icon: ChartPie, label: "Default" },
-  { group: "Dashboards", icon: Grid2X2, label: "CRM", disabled: true },
-  { group: "Dashboards", icon: ChartLine, label: "Analytics", disabled: true },
-  { group: "Dashboards", icon: ShoppingBag, label: "E-Commerce", disabled: true },
-  { group: "Dashboards", icon: BookA, label: "Academy", disabled: true },
-  { group: "Dashboards", icon: Forklift, label: "Logistics", disabled: true },
-  { group: "Authentication", label: "Login v1" },
-  { group: "Authentication", label: "Register v1" },
+  { group: "仪表板", icon: ChartPie, label: "默认" },
+  { group: "仪表板", icon: Grid2X2, label: "客户关系管理", disabled: true },
+  { group: "仪表板", icon: ChartLine, label: "数据分析", disabled: true },
+  { group: "仪表板", icon: ShoppingBag, label: "电子商务", disabled: true },
+  { group: "仪表板", icon: BookA, label: "学院", disabled: true },
+  { group: "仪表板", icon: Forklift, label: "物流", disabled: true },
+  { group: "身份认证", label: "登录 v1" },
+  { group: "身份认证", label: "注册 v1" },
 ];
 
 export function SearchDialog() {
@@ -44,15 +44,15 @@ export function SearchDialog() {
         onClick={() => setOpen(true)}
       >
         <Search className="size-4" />
-        Search
+        搜索
         <kbd className="bg-muted inline-flex h-5 items-center gap-1 rounded border px-1.5 text-[10px] font-medium select-none">
           <span className="text-xs">⌘</span>J
         </kbd>
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search dashboards, users, and more…" />
+        <CommandInput placeholder="搜索仪表板、用户和更多…" />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandEmpty>未找到结果。</CommandEmpty>
           {[...new Set(searchItems.map((item) => item.group))].map((group, i) => (
             <React.Fragment key={group}>
               {i !== 0 && <CommandSeparator />}
@@ -63,7 +63,6 @@ export function SearchDialog() {
                     <CommandItem className="!py-1.5" key={item.label} onSelect={() => setOpen(false)}>
                       {item.icon && <item.icon />}
                       <span>{item.label}</span>
-                      {/* {item.shortcut && <CommandShortcut>{item.shortcut}</CommandShortcut>} */}
                     </CommandItem>
                   ))}
               </CommandGroup>

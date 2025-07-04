@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Page() {
-  return <div>page</div>;
+  return <div>页面</div>;
 }

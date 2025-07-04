@@ -41,7 +41,7 @@ function renderTableBody<TData, TValue>({
     return (
       <TableRow>
         <TableCell colSpan={columns.length} className="h-24 text-center">
-          No results.
+          没有结果。
         </TableCell>
       </TableRow>
     );
@@ -80,7 +80,7 @@ export function DataTable<TData, TValue>({
       const oldIndex = dataIds.indexOf(active.id);
       const newIndex = dataIds.indexOf(over.id);
 
-      // Call parent with new data order (parent manages state)
+      // 将新的数据顺序传递给父组件（父组件管理状态）
       const newData = arrayMove(table.options.data, oldIndex, newIndex);
       onReorder(newData);
     }

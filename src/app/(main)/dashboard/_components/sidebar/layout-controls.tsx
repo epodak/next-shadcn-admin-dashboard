@@ -30,13 +30,13 @@ export function LayoutControls({ variant, collapsible, contentLayout }: LayoutCo
       <PopoverContent align="end">
         <div className="flex flex-col gap-5">
           <div className="space-y-1.5">
-            <h4 className="text-sm leading-none font-medium">Layout Settings</h4>
-            <p className="text-muted-foreground text-xs">Customize your dashboard layout preferences.</p>
+            <h4 className="text-sm leading-none font-medium">布局设置</h4>
+            <p className="text-muted-foreground text-xs">自定义您的仪表板布局偏好。</p>
           </div>
 
           <div className="flex flex-col gap-3">
             <div className="space-y-1">
-              <Label className="text-xs font-medium">Sidebar Variant</Label>
+              <Label className="text-xs font-medium">侧边栏变体</Label>
               <ToggleGroup
                 className="w-full"
                 size="sm"
@@ -45,20 +45,20 @@ export function LayoutControls({ variant, collapsible, contentLayout }: LayoutCo
                 value={variant}
                 onValueChange={(value) => handleValueChange("sidebar_variant", value)}
               >
-                <ToggleGroupItem className="text-xs" value="inset" aria-label="Toggle inset">
-                  Inset
+                <ToggleGroupItem className="text-xs" value="inset" aria-label="切换内嵌">
+                  内嵌
                 </ToggleGroupItem>
-                <ToggleGroupItem className="text-xs" value="sidebar" aria-label="Toggle sidebar">
-                  Sidebar
+                <ToggleGroupItem className="text-xs" value="sidebar" aria-label="切换侧边栏">
+                  侧边栏
                 </ToggleGroupItem>
-                <ToggleGroupItem className="text-xs" value="floating" aria-label="Toggle floating">
-                  Floating
+                <ToggleGroupItem className="text-xs" value="floating" aria-label="切换浮动">
+                  浮动
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
 
             <div className="space-y-1">
-              <Label className="text-xs font-medium">Sidebar Collapsible</Label>
+              <Label className="text-xs font-medium">侧边栏可折叠</Label>
               <ToggleGroup
                 className="w-full"
                 size="sm"
@@ -67,17 +67,17 @@ export function LayoutControls({ variant, collapsible, contentLayout }: LayoutCo
                 value={collapsible}
                 onValueChange={(value) => handleValueChange("sidebar_collapsible", value)}
               >
-                <ToggleGroupItem className="text-xs" value="icon" aria-label="Toggle icon">
-                  Icon
+                <ToggleGroupItem className="text-xs" value="icon" aria-label="切换图标">
+                  图标
                 </ToggleGroupItem>
-                <ToggleGroupItem className="text-xs" value="offcanvas" aria-label="Toggle offcanvas">
-                  OffCanvas
+                <ToggleGroupItem className="text-xs" value="offcanvas" aria-label="切换离屏">
+                  离屏
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
 
             <div className="space-y-1">
-              <Label className="text-xs font-medium">Content Layout</Label>
+              <Label className="text-xs font-medium">内容布局</Label>
               <ToggleGroup
                 className="w-full"
                 size="sm"
@@ -86,11 +86,11 @@ export function LayoutControls({ variant, collapsible, contentLayout }: LayoutCo
                 value={contentLayout}
                 onValueChange={(value) => handleValueChange("content_layout", value)}
               >
-                <ToggleGroupItem className="text-xs" value="centered" aria-label="Toggle centered">
-                  Centered
+                <ToggleGroupItem className="text-xs" value="centered" aria-label="切换居中">
+                  居中
                 </ToggleGroupItem>
-                <ToggleGroupItem className="text-xs" value="full-width" aria-label="Toggle full-width">
-                  Full Width
+                <ToggleGroupItem className="text-xs" value="full-width" aria-label="切换全宽">
+                  全宽
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>

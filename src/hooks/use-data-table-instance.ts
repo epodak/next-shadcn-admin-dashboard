@@ -23,6 +23,7 @@ type UseDataTableInstanceProps<TData, TValue> = {
   getRowId?: (row: TData, index: number) => string;
 };
 
+// 数据表实例 Hook
 export function useDataTableInstance<TData, TValue>({
   data,
   columns,

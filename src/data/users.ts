@@ -1,19 +1,20 @@
+// 用户数据
 export const users = [
   {
     id: "1",
-    name: "Arham Khan",
-    username: "Aarhamkhnz",
-    email: "hello@arhamkhnz.com",
+    name: "张三",
+    username: "zhangsan",
+    email: "zhangsan@example.com",
     avatar: "/avatars/arhamkhnz.png",
-    role: "administrator",
+    role: "管理员",
   },
   {
     id: "2",
-    name: "Ammar Khan",
-    username: "ammarkhnz",
-    email: "hello@ammarkhnz.com",
+    name: "李四",
+    username: "lisi",
+    email: "lisi@example.com", 
     avatar: "",
-    role: "admin",
+    role: "用户",
   },
 ];
 

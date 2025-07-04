@@ -11,8 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 
 const FormSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
+  email: z.string().email({ message: "请输入有效的邮箱地址。" }),
+  password: z.string().min(6, { message: "密码至少需要6个字符。" }),
   remember: z.boolean().optional(),
 });
 
@@ -27,7 +27,7 @@ export function LoginFormV1() {
   });
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-    toast("You submitted the following values", {
+    toast("您提交了以下值", {
       description: (
         <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
@@ -44,7 +44,7 @@ export function LoginFormV1() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel>邮箱地址</FormLabel>
               <FormControl>
                 <Input id="email" type="email" placeholder="you@example.com" autoComplete="email" {...field} />
               </FormControl>
@@ -57,7 +57,7 @@ export function LoginFormV1() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>密码</FormLabel>
               <FormControl>
                 <Input
                   id="password"
@@ -85,13 +85,13 @@ export function LoginFormV1() {
                 />
               </FormControl>
               <FormLabel htmlFor="login-remember" className="text-muted-foreground ml-1 text-sm font-medium">
-                Remember me for 30 days
+                记住我30天
               </FormLabel>
             </FormItem>
           )}
         />
         <Button className="w-full" type="submit">
-          Login
+          登录
         </Button>
       </form>
     </Form>

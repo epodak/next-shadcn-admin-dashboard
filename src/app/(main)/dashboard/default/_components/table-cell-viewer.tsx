@@ -23,21 +23,21 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { sectionSchema } from "./schema";
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "一月", desktop: 186, mobile: 80 },
+  { month: "二月", desktop: 305, mobile: 200 },
+  { month: "三月", desktop: 237, mobile: 120 },
+  { month: "四月", desktop: 73, mobile: 190 },
+  { month: "五月", desktop: 209, mobile: 130 },
+  { month: "六月", desktop: 214, mobile: 140 },
 ];
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "桌面端",
     color: "var(--primary)",
   },
   mobile: {
-    label: "Mobile",
+    label: "移动端",
     color: "var(--primary)",
   },
 } satisfies ChartConfig;
@@ -55,7 +55,7 @@ export function TableCellViewer({ item }: { item: z.infer<typeof sectionSchema> 
       <DrawerContent>
         <DrawerHeader className="gap-1">
           <DrawerTitle>{item.header}</DrawerTitle>
-          <DrawerDescription>Showing total visitors for the last 6 months</DrawerDescription>
+          <DrawerDescription>显示过去6个月的访客总数</DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
           {!isMobile && (
@@ -75,7 +75,7 @@ export function TableCellViewer({ item }: { item: z.infer<typeof sectionSchema> 
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
+                    tickFormatter={(value) => value.slice(0, 2)}
                     hide
                   />
                   <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
@@ -100,11 +100,10 @@ export function TableCellViewer({ item }: { item: z.infer<typeof sectionSchema> 
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month <TrendingUp className="size-4" />
+                  本月上升趋势5.2% <TrendingUp className="size-4" />
                 </div>
                 <div className="text-muted-foreground">
-                  Showing total visitors for the last 6 months. This is just some random text to test the layout. It
-                  spans multiple lines and should wrap around.
+                  显示过去6个月的访客总数。这只是一些随机文本来测试布局。它跨越多行并应该自动换行。
                 </div>
               </div>
               <Separator />
@@ -112,57 +111,57 @@ export function TableCellViewer({ item }: { item: z.infer<typeof sectionSchema> 
           )}
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
+              <Label htmlFor="header">标题</Label>
               <Input id="header" defaultValue={item.header} />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
+                <Label htmlFor="type">类型</Label>
                 <Select defaultValue={item.type}>
                   <SelectTrigger id="type" className="w-full">
-                    <SelectValue placeholder="Select a type" />
+                    <SelectValue placeholder="选择类型" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Table of Contents">Table of Contents</SelectItem>
-                    <SelectItem value="Executive Summary">Executive Summary</SelectItem>
-                    <SelectItem value="Technical Approach">Technical Approach</SelectItem>
-                    <SelectItem value="Design">Design</SelectItem>
-                    <SelectItem value="Capabilities">Capabilities</SelectItem>
-                    <SelectItem value="Focus Documents">Focus Documents</SelectItem>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Cover Page">Cover Page</SelectItem>
+                    <SelectItem value="Table of Contents">目录</SelectItem>
+                    <SelectItem value="Executive Summary">执行摘要</SelectItem>
+                    <SelectItem value="Technical Approach">技术方法</SelectItem>
+                    <SelectItem value="Design">设计</SelectItem>
+                    <SelectItem value="Capabilities">功能</SelectItem>
+                    <SelectItem value="Focus Documents">重点文档</SelectItem>
+                    <SelectItem value="Narrative">叙述</SelectItem>
+                    <SelectItem value="Cover Page">封面</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
+                <Label htmlFor="status">状态</Label>
                 <Select defaultValue={item.status}>
                   <SelectTrigger id="status" className="w-full">
-                    <SelectValue placeholder="Select a status" />
+                    <SelectValue placeholder="选择状态" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Done">Done</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Not Started">Not Started</SelectItem>
+                    <SelectItem value="Done">已完成</SelectItem>
+                    <SelectItem value="In Progress">进行中</SelectItem>
+                    <SelectItem value="Not Started">未开始</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
+                <Label htmlFor="target">目标</Label>
                 <Input id="target" defaultValue={item.target} />
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
+                <Label htmlFor="limit">限制</Label>
                 <Input id="limit" defaultValue={item.limit} />
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
+              <Label htmlFor="reviewer">审核员</Label>
               <Select defaultValue={item.reviewer}>
                 <SelectTrigger id="reviewer" className="w-full">
-                  <SelectValue placeholder="Select a reviewer" />
+                  <SelectValue placeholder="选择审核员" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
@@ -174,9 +173,9 @@ export function TableCellViewer({ item }: { item: z.infer<typeof sectionSchema> 
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>提交</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
+            <Button variant="outline">完成</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
